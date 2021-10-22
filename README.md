@@ -62,3 +62,17 @@ For example, when given size is 3:
     3 6 9
 
 for given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]
+
+## Task 6
+
+You get an array of arrays.
+If you sort the arrays by their length, you will see, that their length-values are consecutive.
+But one array is missing!
+
+Write a method, that returns the length of the missing array.
+
+Example:
+
+    [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+
+If the array of arrays is null/nil or empty or an array in the array is null or empty, the method should return 0. There will always be a missing element and its length will be always between the given arrays.
