@@ -76,3 +76,9 @@ Example:
     [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
 
 If the array of arrays is null/nil or empty or an array in the array is null or empty, the method should return 0. There will always be a missing element and its length will be always between the given arrays.
+
+## Task 7
+
+ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.
+
+Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, they should be returned as they are. Only letters from the latin/english alphabet should be shifted (like in the original Rot13 "implementation").
