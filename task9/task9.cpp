@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stack>
 
 std::string brainLuck(const std::string &code, const std::string &input) {
     int len_input = input.length();
@@ -7,109 +8,76 @@ std::string brainLuck(const std::string &code, const std::string &input) {
         return "";
     }
     
-    std::string result;
-    result.resize(len_input, '\0');
+    std::string result_string;
+    // result_string.resize(len_input, '\0');
+
+    std::stack<char> result_stack;
+    std::string::const_iterator it_input = input.cbegin();
     
-    std::string::const_iterator it_inp = input.cbegin();
-    std::string::const_iterator it_code = code.cbegin();
-    std::string::iterator it_res = result.begin();
-
-    while(it_code != code.cend()) {
-        if (it_inp == input.end()) {
-            return result;
-        }
-
-        switch (*it_code) {
-            case '>': {
-                ++it_inp;
-                break;
-            }
-            case '<': {
-                --it_inp;
-                break;
-            }
-            case '+': {
-                if (it_res == result.end()) {
-                    // std::cout << "nullptr from +";
-                    return "";
-                }
-                // std::cout << "BEFORE +: " << *it_res << '\n';
-                *it_res = char((*it_res + 1) % 256);
-                // std::cout << "AFTER +: " << *it_res << '\n';
-                break;
-            }
-            case '-': {
-                if (it_res == result.end()) {
-                    // std::cout << "nullptr from -";
-                    return "";
-                }
-                // std::cout << "BEFORE -: " << *it_res << '\n';
-                *it_res = uint(*it_res - 1) % 256;
-                // std::cout << "AFTER -: " << *it_res << '\n';
-                break;
-            }
-            case '.': {
-                // std::cout << "BEFORE .: " << *it_res << '\n';
-                ++it_res;
-                // std::cout << "\tRESULT: " << result << '\n' ;
-                break;
-            }
-            case ',': {
-                if (it_inp == input.end()) {
-                    // std::cout << "nullptr from , BEFORE";
-                    return "";
-                }
-                if (it_res == result.end()) {
-                    // std::cout << "nullptr from , BEFORE";
-                    return "";
-                }
-                // std::cout << "BEFORE ," << *it_res << " and the other " << *it_inp << '\n';
-                *it_res = *it_inp++;
-                // std::cout << "AFTER ," << *it_res << ' ' << *it_inp << '\n';
-                if (it_res == result.end()) {
-                    // std::cout << "nullptr from ,";
-                    return "";
-                }
-                break;
-            }
-            case '[': {
-                if (*it_code == '0') {
-                    while (*it_code != ']') {
-                        ++it_code;
-                    }
-                } else {
-                    // std::cout << "going forward from [. code: " << *(it_code + 1) << '\n';
-                }
-
-                break;
-            }
-            case ']': {
-                if (int(*it_code) != 0) {
-                    while (*it_code != '[') {
-                        --it_code;
-                    }
-                } else {
-                    // std::cout << "going forward from ]\n";
-                }
-                break;
-            }
-            default: {
-                std::cout << "Unsupported instruction!\n";
-                return "";
-            }
-        }
-
-        ++it_code;
+    std::stack<char> commands;
+    for (std::string::const_iterator it = code.cend(); it != code.cbegin() - 1; --it) {
+        commands.push(*it);
     }
 
-    return result;
+    while (commands.top() != *(code.cend())) {
+        char op = commands.top();
+        commands.pop();
+
+        switch (op)
+        {
+        case ',': {
+            result_stack.push(*it_input);
+
+            break;
+        }
+        case '.': {
+            result_string += result_stack.top();
+            result_stack.pop();
+
+            break;
+        }
+        case '+': {
+            char top = result_stack.top();
+            result_stack.push((top + 1) % 256);
+
+            break;
+        }
+        case '-': {
+            char top = result_stack.top();
+            std::cout << (int(top) - 1) << '\n';;
+            result_stack.push((unsigned((int)top - 1)) % 256);
+
+            break;
+        }
+        default: {
+            std::cout << "ERROR: Unsupported symbol: " << op  << " (" << int(op) << ')' << '\n';
+            return "";
+        }
+        }
+    }
+
+    return result_string;
 }
 
 int main() {
+    // std::cout << ((unsigned(-1))%256) << '\n';
+
+    std::cout << ((char) 0) << '\n';
+
+    //echo until "0";
+    std::string tw = "";
+    tw.append(1,(char) 0);
+    std::cout << int(brainLuck(",-.",tw)[0]) << '\n'; // "c"
+
     //echo until "255";
-    std::string tw = "c";
+    tw = "c";
     tw.append(1,(char) 255);
     std::cout << brainLuck(",.",tw) << '\n'; // "c"
+
+    //echo until "255";
+    tw = "c";
+    tw.append(1,(char)255);
+    std::cout << brainLuck(",-.",tw) << '\n'; // "b"
 
     //echo until "255";
     tw = "c";
@@ -135,8 +103,8 @@ int main() {
     // std::string dw;
     // dw.append(1, (char) 7);
     // dw.append(1, (char) 3);
-    // std::string result;
-    // result.append(1, (char)21);
+    // std::string result_string;
+    // result_string.append(1, (char)21);
     // std::cout << brainLuck(",>,<[>[->+>+<<]>>[-<<+>>]<<<-]>>.",dw << '\n'; // 
 
     return 0;
