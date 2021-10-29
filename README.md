@@ -1,7 +1,5 @@
 # CodeEveryDay
 
-Daily coding practice. Goal is to upload a solution to a coding problem every day in at least two programming languages.
-
 ## Task 1
 
 Given a string, return whether or not it forms a palindrome ignoring case and non-alphabetical characters.
