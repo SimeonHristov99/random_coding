@@ -1,17 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <stack>
 
 std::string brainLuck(const std::string &code, const std::string &input)
 {
     int len_input = input.length();
     int len_code = code.length();
-
-    if (len_input == 0)
-    {
-        std::cout << "Input was empty!\n";
-        return "";
-    }
 
     if (len_code == 0)
     {
@@ -25,9 +18,9 @@ std::string brainLuck(const std::string &code, const std::string &input)
     std::vector<std::vector<int>> brackets;
 
     std::string result_string;
-    // result_string.resize(len_input, '\0');
-
     std::string::const_iterator it_input = input.cbegin();
+    char data_pointers[5000] = {'\0'};
+    int data_ptr_i = 0;
 
     for (int i = 0; i < len_code; ++i)
     {
@@ -48,42 +41,55 @@ std::string brainLuck(const std::string &code, const std::string &input)
         }
     }
 
-    char data_pointer = '0';
     for (int i = 0; i < len_code; ++i)
     {
         switch (code[i])
         {
+        case '>':
+        {
+            ++data_ptr_i;
+
+            break;
+        }
+        case '<':
+        {
+            --data_ptr_i;
+
+            break;
+        }
         case ',':
         {
-            data_pointer = *it_input;
+            data_pointers[data_ptr_i] = *it_input;
             ++it_input;
 
             break;
         }
         case '.':
         {
-            result_string += data_pointer;
+            result_string += data_pointers[data_ptr_i];
 
             break;
         }
         case '+':
         {
-            data_pointer = (data_pointer + 1) % 256;
+            data_pointers[data_ptr_i] = (data_pointers[data_ptr_i] + 1) % 256;
 
             break;
         }
         case '-':
         {
-            data_pointer = (char)(unsigned((int)data_pointer - 1)) % 256;
+            data_pointers[data_ptr_i] = (char)(unsigned((int)data_pointers[data_ptr_i] - 1)) % 256;
 
             break;
         }
         case '[':
         {
-            if ((int)data_pointer == 0)
+            if ((int)data_pointers[data_ptr_i] == 0)
             {
-                for (auto b : brackets) {
-                    if (b[0] == i) {
+                for (auto b : brackets)
+                {
+                    if (b[0] == i)
+                    {
                         i = b[1];
                         break;
                     }
@@ -94,10 +100,12 @@ std::string brainLuck(const std::string &code, const std::string &input)
         }
         case ']':
         {
-            if ((int)data_pointer != 0)
+            if ((int)data_pointers[data_ptr_i] != 0)
             {
-                for (auto b : brackets) {
-                    if (b[1] == i) {
+                for (auto b : brackets)
+                {
+                    if (b[1] == i)
+                    {
                         i = b[0];
                         break;
                     }
@@ -127,7 +135,7 @@ int main()
     //echo until "255";
     tw = "c";
     tw.append(1, (char)255);
-    std::cout << brainLuck(",-.", tw) << '\n'; // "c"
+    std::cout << brainLuck(",-.", tw) << '\n'; // "b"
 
     //echo until "255";
     tw = "c";
@@ -137,26 +145,25 @@ int main()
     //echo until "255";
     tw = "c0";
     tw.append(1, (char)255);
-    std::cout << brainLuck(",.,[.", tw) << '\n'; // "cc"
+    std::cout << brainLuck(",.,[.", tw) << '\n'; // "c0"
 
-    // //echo until "255";
-    // tw = "codewars";
-    // tw.append(1, (char)255);
-    // std::cout << brainLuck(",+[-.,+]", tw) << '\n'; // "codewars"
+    //echo until "255";
+    tw = "codewars";
+    tw.append(1, (char)255);
+    std::cout << brainLuck(",+[-.,+]", tw) << '\n'; // "codewars"
 
     //echo until "0";
-    // std::string mw = "codewars";
-    // mw.append(1, (char)0);
-    // // endless recursion
-    // std::cout << brainLuck(",[.[-],]", mw) << '\n'; // "codewars"
+    tw = "codewars";
+    tw.append(1, (char)0);
+    std::cout << brainLuck(",[.[-],]", tw) << '\n'; // "codewars"
 
     //two number multiplier
-    // std::string dw;
-    // dw.append(1, (char) 7);
-    // dw.append(1, (char) 3);
-    // std::string result_string;
-    // result_string.append(1, (char)21);
-    // std::cout << brainLuck(",>,<[>[->+>+<<]>>[-<<+>>]<<<-]>>.",dw << '\n'; //
+    tw = "";
+    std::string result_string;
+    tw.append(1, (char)7);
+    tw.append(1, (char)3);
+    result_string.append(1, (char)21);
+    std::cout << (int)brainLuck(",>,<[>[->+>+<<]>>[-<<+>>]<<<-]>>.", tw)[0] << '\n'; // 21
 
     return 0;
 }
