@@ -133,11 +133,3 @@ The function will take in input...
 ... and will return ...
 
     the output of the interpreted code (always as a string), produced by the . instruction.
-
-Implementation-specific details for this Kata:
-
-    Your memory tape should be large enough - the original implementation had 30,000 cells but a few thousand should suffice for this Kata
-    Each cell should hold an unsigned byte with wrapping behavior (i.e. 255 + 1 = 0, 0 - 1 = 255), initialized to 0
-    The memory pointer should initially point to a cell in the tape with a sufficient number (e.g. a few thousand or more) of cells to its right. For convenience, you may want to have it point to the leftmost cell initially
-    You may assume that the , command will never be invoked when the input stream is exhausted
-    Error-handling, e.g. unmatched square brackets and/or memory pointer going past the leftmost cell is not required in this Kata. If you see test cases that require you to perform error-handling then please open an Issue in the Discourse for this Kata (don't forget to state which programming language you are attempting this Kata in).
