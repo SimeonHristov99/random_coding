@@ -2,6 +2,24 @@
 
 Daily coding practice. Goal is to upload a solution to a coding problem every day in at least two programming languages.
 
+## Quick Start
+
+Substitute i with a number.
+
+For C++:
+
+```console
+$ cd taski
+/taski$ g++ taski.cpp -o taski && ./taski && rm taski
+```
+
+For Python:
+
+```console
+$ cd taski
+/taski$ python3 taski
+```
+
 ## Task 1
 
 Given a string, return whether or not it forms a palindrome ignoring case and non-alphabetical characters.
