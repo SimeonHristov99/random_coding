@@ -1,7 +1,5 @@
 # CodeEveryDay
 
-Daily coding practice. Goal is to upload a solution to a coding problem every day in at least two programming languages.
-
 ## Quick Start
 
 Substitute i with a number.
