@@ -32,10 +32,12 @@ Ex: Given the following strings...
 
 Implement a function named generateRange(min, max, step), which takes three arguments and generates a range of integers from min to max, with the step. The first integer is the minimum value, the second is the maximum of the range and the third is the step. (min < max)
 
-    generate_range(2, 10, 2) # should return list of [2,4,6,8,10]
-    generate_range(1, 10, 3) # should return list of [1,4,7,10]
-    generate_range(2, 10, 2) # should return array of [2, 4, 6, 8, 10]
-    generate_range(1, 10, 3) # should return array of [1, 4, 7, 10]
+```python
+generate_range(2, 10, 2) # should return list of [2,4,6,8,10]
+generate_range(1, 10, 3) # should return list of [1,4,7,10]
+generate_range(2, 10, 2) # should return array of [2, 4, 6, 8, 10]
+generate_range(1, 10, 3) # should return array of [1, 4, 7, 10]
+```
 
 ## Task 3
 
@@ -73,9 +75,11 @@ Create NxN multiplication table, of size provided in parameter.
 
 For example, when given size is 3:
 
-    1 2 3
-    2 4 6
-    3 6 9
+```console
+1 2 3
+2 4 6
+3 6 9
+```
 
 for given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]
 
@@ -89,7 +93,9 @@ Write a method, that returns the length of the missing array.
 
 Example:
 
-    [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+```python
+[[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+```
 
 If the array of arrays is null/nil or empty or an array in the array is null or empty, the method should return 0. There will always be a missing element and its length will be always between the given arrays.
 
