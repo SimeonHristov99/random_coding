@@ -156,7 +156,7 @@ The function will take in input...
 
     the output of the interpreted code (always as a string), produced by the . instruction.
 
-# Task 10
+## Task 10
 
 Create a RomanNumerals class that can convert a roman numeral to and from an integer value. It should follow the API demonstrated in the examples below. Multiple roman numeral values will be tested for each helper method.
 
@@ -182,7 +182,7 @@ Help
 | D | 500 |
 | M | 1000 |
 
-# Task 11
+## Task 11
 
 Write a function which formats a duration, given as a number of seconds, in a human-friendly way.
 
@@ -194,3 +194,16 @@ It is much easier to understand with an example:
 format_duration(62)    // returns "1 minute and 2 seconds"
 format_duration(3662)  // returns "1 hour, 1 minute and 2 seconds"
 ```
+
+## Task 12
+
+Given the string representations of two integers, return the string representation of the sum of those integers.
+
+For example:
+
+```c++
+sum_strings("1", "2") // => "3"
+sum_strings("111111111111111111111111111111", "111111111111111111111111111111") // => "222222222222222222222222222222"
+```
+
+A string representation of an integer will contain no characters besides the ten numerals "0" to "9".
