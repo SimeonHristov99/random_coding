@@ -24,9 +24,11 @@ Given a string, return whether or not it forms a palindrome ignoring case and no
 
 Ex: Given the following strings...
 
-    "level", return true
-    "algorithm", return false
-    "A man, a plan, a canal: Panama.", return true
+```text
+"level", return true
+"algorithm", return false
+"A man, a plan, a canal: Panama.", return true
+```
 
 ## Task 2
 
@@ -45,21 +47,23 @@ Given a string representing the sequence of moves a robot vacuum makes, return w
 
 Ex: Given the following strings...
 
-    "LR", return true
-    "URURD", return false
-    "RUULLDRD", return true
+```text
+"LR", return true
+"URURD", return false
+"RUULLDRD", return true
+```
 
 ## Task 4
 
 Write a program that will calculate the number of trailing zeros in a factorial of a given number.
 
-Examples
+Examples:
 
-    zeros(6) = 1
-        6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
+```python
+zeros(6) = 1  # 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
 
-    zeros(12) = 2
-        12! = 479001600 --> 2 trailing zeros
+zeros(12) = 2  # 12! = 479001600 --> 2 trailing zeros
+```
 
 You are not meant to calculate the factorial. The number of trailing zeros in *n!* is the number of factors of 5 in *{1,2,....n}*, which is:
 
@@ -116,45 +120,53 @@ How I crossed a mountainous desert the smart way.
 
 The directions given to the man are, for example, the following (depending on the language):
 
-    [ "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" ]
+```python
+[ "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" ]
+```
 
 Going "NORTH" and immediately "SOUTH" is not reasonable, better stay to the same place! So the task is to give to the man a simplified version of the plan. A better plan in this case is simply:
 
-    [ "WEST" ]
+```python
+[ "WEST" ]
+```
 
 Other examples:
 
-    In ["NORTH", "SOUTH", "EAST", "WEST"], the direction "NORTH" + "SOUTH" is going north and coming back right away. The path becomes ["EAST", "WEST"], now "EAST" and "WEST" annihilate each other, therefore, the final result is [].
+In `["NORTH", "SOUTH", "EAST", "WEST"]`, the direction `"NORTH" + "SOUTH"` is going north and coming back right away. The path becomes `["EAST", "WEST"]`, now `"EAST"` and `"WEST"` annihilate each other, therefore, the final result is `[]`.
 
-    In ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"], "NORTH" and "SOUTH" are not directly opposite but they become directly opposite after the reduction of "EAST" and "WEST" so the whole path is reducible to ["WEST", "WEST"].
+In `["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"]`, `"NORTH"` and `"SOUTH"` are not directly opposite but they become directly opposite after the reduction of `"EAST"` and `"WEST"` so the whole path is reducible to `["WEST", "WEST"]`.
 
 Write a function which will take an array of strings and returns an array of strings with the needless directions removed.
 
-Note:
-
-    Not all paths can be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
+> **Note**: Not all paths can be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
 
 ## Task 9
 
 Inspired from real-world Brainf**k, we want to create an interpreter of that language which will support the following instructions:
 
-    > increment the data pointer (to point to the next cell to the right).
-    < decrement the data pointer (to point to the next cell to the left).
-    + increment (increase by one, truncate overflow: 255 + 1 = 0) the byte at the data pointer.
-    - decrement (decrease by one, treat as unsigned byte: 0 - 1 = 255 ) the byte at the data pointer.
-    . output the byte at the data pointer.
-    , accept one byte of input, storing its value in the byte at the data pointer.
-    [ if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
-    ] if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.
+```text
+> => increment the data pointer (to point to the next cell to the right).
+< => decrement the data pointer (to point to the next cell to the left).
++ => increment (increase by one, truncate overflow: 255 + 1 = 0) the byte at the data pointer.
+- => decrement (decrease by one, treat as unsigned byte: 0 - 1 = 255 ) the byte at the data pointer.
+. => output the byte at the data pointer.
+, => accept one byte of input, storing its value in the byte at the data pointer.
+[ => if the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it forward to the command after the matching ] command.
+] => if the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it back to the command after the matching [ command.
+```
 
 The function will take in input...
 
-    the program code, a string with the sequence of machine instructions,
-    the program input, a string, eventually empty, that will be interpreted as an array of bytes using each character's ASCII code and will be consumed by the , instruction
+```text
+the program code, a string with the sequence of machine instructions,
+the program input, a string, eventually empty, that will be interpreted as an array of bytes using each character's ASCII code and will be consumed by the , instruction
+```
 
 ... and will return ...
 
-    the output of the interpreted code (always as a string), produced by the . instruction.
+```text
+the output of the interpreted code (always as a string), produced by the . instruction.
+```
 
 ## Task 10
 
@@ -262,3 +274,27 @@ Ex: Given the following strings...
 "compUter", return false
 "coding", return true
 ```
+
+## Task 15
+
+Given an `n x n` array, return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+
+Examples:
+
+```python
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+
+snail(array) # => [1,2,3,6,9,8,7,4,5]
+
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+
+snail(array) # => [1,2,3,4,5,6,7,8,9]
+```
+
+This image will illustrate things more clearly:
+
+![Alt text](./assets/task15.png?raw=true "snail_sort")
