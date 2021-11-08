@@ -298,3 +298,17 @@ snail(array) # => [1,2,3,4,5,6,7,8,9]
 This image will illustrate things more clearly:
 
 ![Alt text](./assets/task15.png?raw=true "snail_sort")
+
+## Task 16
+
+Create all permutations of an input string and remove duplicates, if present. This means, you have to shuffle all letters from the input in all possible orders.
+
+Examples:
+
+```c++
+permutations("a");    // => vector<string> {"a"}
+permutations("ab");   // => vector<string> {"ab", "ba"}
+permutations("aabb"); // => vector<string> {"aabb", "abab", "abba", "baab", "baba", "bbaa"}
+```
+
+The order of the permutations doesn't matter.
