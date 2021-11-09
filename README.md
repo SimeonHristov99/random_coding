@@ -312,3 +312,7 @@ permutations("aabb"); // => vector<string> {"aabb", "abab", "abba", "baab", "bab
 ```
 
 The order of the permutations doesn't matter.
+
+The permutation tree might be helpful:
+
+![Alt text](./assets/task16.png?raw=true "snail_sort")

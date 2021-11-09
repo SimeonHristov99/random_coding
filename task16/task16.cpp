@@ -1,67 +1,83 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
+#include <algorithm>
 
-std::string permute_one_iter(char c, const std::string &s)
-{
-    std::vector<std::string> res = {s};
-    int s_len = s.size();
-    int i = 0;
-
-    for (std::vector<std::string>::const_iterator it = res.begin(); i < s_len && it != res.end(); ++it)
-    {
-        std::string current_str = res[0];
-        int c_len = current_str.length();
-
-        res.erase(res.begin());
-
-        for (int j = i; j < c_len; ++j)
-        {
-            std::string current_str_copy = current_str;
-            std::swap(current_str_copy[i], current_str_copy[j]);
-            res.push_back(current_str_copy);
-        }
-
-        ++i;
-    }
-
-    return "";
-}
+typedef std::pair<std::string, int> pair;
 
 std::vector<std::string> permutations(std::string s)
 {
+    // Out variables
     std::vector<std::string> result;
 
-    for (const char c : s)
+    // Helper variables
+    std::queue<pair> res;
+    res.push(pair(s, 0));
+    int s_len = s.size();
+
+    // Permute elements.
+    while (res.front().second < s_len - 1)
     {
+        pair front = res.front();
+        res.pop();
+
+        std::string current_str = front.first;
+        int permute_idx = front.second;
+
+        int c_len = current_str.length();
+
+        for (int j = permute_idx; j < c_len; ++j)
+        {
+            std::string current_str_copy = current_str;
+            std::swap(current_str_copy[permute_idx], current_str_copy[j]);
+            res.push(pair(current_str_copy, permute_idx + 1));
+        }
     }
+
+    // Dump the first element in a vector
+    while (!res.empty())
+    {
+        result.push_back(res.front().first);
+        res.pop();
+    }
+
+    // Remove duplicates
+    std::sort(result.begin(), result.end());
+    result.erase(std::unique(result.begin(), result.end()), result.end());
 
     return result;
 }
 
 int main(int argc, char const *argv[])
 {
-    permute_one_iter('A', "ABC");
-    // std::vector<std::string> result = permutations("a");
+    std::vector<std::string> result = permutations("ABC");
+    for (const std::string& permutation : result)
+    {
+        std::cout << permutation << ' ';
+    }
+    std::cout << '\n';
 
-    // for (const auto x : result)
-    // {
-    //     std::cout << x << ' ';
-    // }
+    result = permutations("a");
+    for (const auto x : result)
+    {
+        std::cout << x << ' ';
+    }
+    std::cout << '\n';
 
-    // result = permutations("ab");
+    result = permutations("ab");
+    for (const auto x : result)
+    {
+        std::cout << x << ' ';
+    }
+    std::cout << '\n';
 
-    // for (const auto x : result)
-    // {
-    //     std::cout << x << ' ';
-    // }
-
-    // result = permutations("aabb");
-
-    // for (const auto x : result)
-    // {
-    //     std::cout << x << ' ';
-    // }
+    result = permutations("aabb");
+    for (const auto x : result)
+    {
+        std::cout << x << ' ';
+    }
+    std::cout << '\n';
 
     return 0;
 }
