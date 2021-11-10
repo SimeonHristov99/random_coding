@@ -35,14 +35,14 @@ std::vector<std::string> permutations(std::string s)
         }
     }
 
-    // Dump the first element in a vector
+    // Dump the first elements in a vector.
     while (!res.empty())
     {
         result.push_back(res.front().first);
         res.pop();
     }
 
-    // Remove duplicates
+    // Remove duplicates.
     std::sort(result.begin(), result.end());
     result.erase(std::unique(result.begin(), result.end()), result.end());
 
