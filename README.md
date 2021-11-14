@@ -330,3 +330,23 @@ Bonus: Can you do this in one pass?
 Given a array of numbers representing the stock prices of a company in chronological order, write a function that calculates the maximum profit you could have made from buying and selling that stock once. You must buy before you can sell it.
 
 For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could buy the stock at 5 dollars and sell it at 10 dollars.
+
+## Task 19
+
+Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+Implementation detail:
+
+```text
+Do not use a loop.
+```
+
+For example:
+
+```text
+summation(2) -> 3
+1 + 2
+
+summation(8) -> 36
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+```
