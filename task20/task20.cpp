@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stack>
 
 int factorial(int x)
@@ -31,7 +32,7 @@ int calc_expression(std::string input)
         {
             int number = 0;
 
-            while('0' <= input[i] && input[i] <= '9')
+            while ('0' <= input[i] && input[i] <= '9')
             {
                 number = number * 10 + (input[i] - '0');
                 ++i;
@@ -78,10 +79,30 @@ int calc_expression(std::string input)
     return numbers.top();
 }
 
+void evaluate(const char *filename)
+{
+    std::string line;
+
+    std::ifstream fin(filename);
+    if (!fin)
+    {
+        std::cout << "ERROR: Could not open file!\n";
+        return;
+    }
+
+    std::getline(fin, line);
+
+    while (std::getline(fin, line))
+    {
+        std::cout << line << " = " << calc_expression(line) << '\n';
+    }
+
+    fin.close();
+}
+
 int main(int argc, char const *argv[])
 {
-    std::cout << (calc_expression("f(15)")) << '\n'; // 25
-    std::cout << (calc_expression("f(m(25,g(14)))")) << '\n'; // 76
+    evaluate("./input.txt"); // should be 25, 24, 76
 
     return 0;
 }
