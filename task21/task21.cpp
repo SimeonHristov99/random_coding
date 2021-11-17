@@ -37,6 +37,8 @@ void shoot(Pair &request, std::list<Pair> &balls)
         balls.pop_front();
     }
 
+    int num_balls = 0;
+
     if (balls.empty())
     {
         if (request.first != 1)
@@ -47,9 +49,17 @@ void shoot(Pair &request, std::list<Pair> &balls)
 
         tmp.push_front(request);
     }
+    else if (balls.front().second != request.second)
+    {
+        Pair front = balls.front();
+        balls.pop_front();
+        front.first -= request.first;
+        //TODO: balls.push_front({  });
+
+        balls.push_front(request);
+    }
     else
     {
-        int num_balls = 0;
 
         if (balls.front().first + 1 > 2)
         {
@@ -69,9 +79,9 @@ void shoot(Pair &request, std::list<Pair> &balls)
                 tmp.pop_front();
             }
         }
-
-        std::cout << num_balls << '\n';
     }
+
+    std::cout << num_balls << '\n';
 }
 
 void print(const std::list<Pair> &balls)
@@ -110,17 +120,22 @@ void play(int n, int colors[], std::queue<Pair> &requests)
     }
 }
 
-int main(int argc, char const *argv[])
+void test1()
 {
-    // int n = 15;
-    // int colors[] = {2, 2, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 1, 1, 2};
+    int n = 15;
+    int colors[] = {2, 2, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 1, 1, 2};
 
-    // std::queue<Pair> requests;
-    // requests.push({10, 3});
-    // requests.push({6, 2});
-    // requests.push({1, 1});
-    // requests.push({3, 2});
+    std::queue<Pair> requests;
+    requests.push({10, 3});
+    requests.push({6, 2});
+    requests.push({1, 1});
+    requests.push({3, 2});
 
+    play(n, colors, requests);
+}
+
+void test2()
+{
     int n = 10;
     int colors[] = {1, 1, 1, 2, 2, 1, 1, 1, 3, 3};
 
@@ -131,6 +146,12 @@ int main(int argc, char const *argv[])
     requests.push({3, 2});
 
     play(n, colors, requests);
+}
+
+int main(int argc, char const *argv[])
+{
+    test1();
+    //test2();
 
     return 0;
 }
