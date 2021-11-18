@@ -99,7 +99,14 @@ void shoot(Pair &request, std::list<Pair> &balls, int &offset)
         }
         else
         {
-            balls.push_front({1, request.second});
+            ++balls.front().first;
+
+            while(!tmp.empty())
+            {
+                balls.push_front(tmp.front());
+                tmp.pop_front();
+            }
+
             ++offset;
         }
     }
@@ -163,6 +170,21 @@ void test1()
 
 void test2()
 {
+    int n = 6;
+    int colors[] = {1, 2, 2, 2, 1, 1};
+
+    std::queue<Pair> requests;
+    requests.push({2, 3});
+    requests.push({2, 3});
+    requests.push({2, 3});
+    requests.push({1, 5});
+    requests.push({3, 4});
+
+    play(n, colors, requests);
+}
+
+void test3()
+{
     int n = 10;
     int colors[] = {1, 1, 1, 2, 2, 1, 1, 1, 3, 3};
 
@@ -179,6 +201,7 @@ int main(int argc, char const *argv[])
 {
     test1();
     test2();
+    test3();
 
     return 0;
 }
