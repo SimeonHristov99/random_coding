@@ -19,7 +19,7 @@ void populate(std::list<Pair> &balls, int colors[], int n)
     }
 }
 
-void shoot(Pair &request, std::list<Pair> &balls)
+void shoot(Pair &request, std::list<Pair> &balls, int &offset)
 {
     if (balls.empty())
     {
@@ -30,7 +30,7 @@ void shoot(Pair &request, std::list<Pair> &balls)
     std::list<Pair> tmp;
 
     // Find where to insert element.
-    while (!balls.empty() && request.first > balls.front().first)
+    while (!balls.empty() && balls.front().first <= request.first + offset + 1 && request.first >= 0)
     {
         tmp.push_front(balls.front());
         request.first -= balls.front().first;
@@ -41,26 +41,44 @@ void shoot(Pair &request, std::list<Pair> &balls)
 
     if (balls.empty())
     {
-        if (request.first != 1)
+        while (!tmp.empty())
         {
-            std::cout << "Adding on an incorrect index!\n";
-            return;
+            balls.push_front(tmp.front());
+            tmp.pop_front();
         }
-
-        tmp.push_front(request);
+        balls.push_back({1, request.second});
+        ++offset;
     }
     else if (balls.front().second != request.second)
     {
-        Pair front = balls.front();
-        balls.pop_front();
-        front.first -= request.first;
-        //TODO: balls.push_front({  });
+        if (balls.front().first > 1)
+        {
+            Pair front = balls.front();
+            int initial_count = front.first;
 
-        balls.push_front(request);
+            balls.pop_front();
+
+            front.first -= request.first;
+
+            balls.push_front({initial_count - front.first, front.second});
+            balls.push_front(request);
+            balls.push_front(front);
+        }
+        else
+        {
+            balls.push_front({1, request.second});
+        }
+
+        while (!tmp.empty())
+        {
+            balls.push_front(tmp.front());
+            tmp.pop_front();
+        }
+
+        ++offset;
     }
     else
     {
-
         if (balls.front().first + 1 > 2)
         {
             num_balls += balls.front().first + 1;
@@ -79,16 +97,24 @@ void shoot(Pair &request, std::list<Pair> &balls)
                 tmp.pop_front();
             }
         }
+        else
+        {
+            balls.push_front({1, request.second});
+            ++offset;
+        }
     }
 
     std::cout << num_balls << '\n';
+    offset -= num_balls;
+    offset = (offset < 0 ? 0 : offset);
 }
 
-void print(const std::list<Pair> &balls)
+void print(std::list<Pair> &balls)
 {
     while (!balls.empty())
     {
-        Pair p = balls.back();
+        Pair p = balls.front();
+        balls.pop_front();
 
         for (int i = 0; i < p.first; ++i)
         {
@@ -101,12 +127,13 @@ void print(const std::list<Pair> &balls)
 void play(int n, int colors[], std::queue<Pair> &requests)
 {
     std::list<Pair> balls;
+    int offset = 0;
 
     populate(balls, colors, n);
 
     while (!requests.empty())
     {
-        shoot(requests.front(), balls);
+        shoot(requests.front(), balls, offset);
         requests.pop();
     }
 
@@ -151,7 +178,7 @@ void test2()
 int main(int argc, char const *argv[])
 {
     test1();
-    //test2();
+    test2();
 
     return 0;
 }
