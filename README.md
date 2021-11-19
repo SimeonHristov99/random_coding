@@ -7,15 +7,13 @@ Substitute i with a number.
 For C++:
 
 ```console
-$ cd taski
-/taski$ g++ taski.cpp -o taski && ./taski && rm taski
+> ./run_cpp.sh ./taski/taski.cpp
 ```
 
 For Python:
 
 ```console
-$ cd taski
-/taski$ python3 taski
+> ./run_py.sh ./taski/taski.py
 ```
 
 ## Task 1
@@ -466,4 +464,36 @@ Output:
 0
 7
 1 1 4 3 3 6 5
+```
+
+## Task 22
+
+Given an integer array, find the previous smaller element for every array element. The previous smaller element of a number x is the first smaller number to the left of x in the array. If the previous smaller element doesn't in the array for any element, consider it -1.
+
+Examples:
+
+```text
+Input:  [2, 5, 3, 7, 8, 1, 9]
+Output: [-1, 2, 2, 3, 7, -1, 1]
+```
+
+```text
+Input:  [5, 7, 4, 9, 8, 10]
+Output: [-1, 5, -1, 4, 4, 8]
+```
+
+```text
+Input:  [1, 5, 2, 2, 2, 5, 5, 4]
+Output: [-1, 1, 1, 1, 1, 2, 2, 2]
+```
+
+## Task 23
+
+Reverse the order of the words in a sentence without reversing the words.
+
+Example:
+
+```text
+Input:  "Technical Interview Preparation"
+Output: "Preparation Interview Technical"
 ```
