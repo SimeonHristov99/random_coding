@@ -497,3 +497,7 @@ Example:
 Input:  "Technical Interview Preparation"
 Output: "Preparation Interview Technical"
 ```
+
+## Task 24
+
+Implement a cyclical doubly-linked list. Test it in main.
