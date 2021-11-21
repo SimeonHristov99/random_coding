@@ -501,3 +501,11 @@ Output: "Preparation Interview Technical"
 ## Task 24
 
 Implement a cyclical doubly-linked list. Test it in main.
+
+## Task 25
+
+When provided with a number between 0-9, return it in words.
+
+Input :: 1
+
+Output :: "One".
