@@ -509,3 +509,14 @@ When provided with a number between 0-9, return it in words.
 Input :: 1
 
 Output :: "One".
+
+## Task 26
+
+You are given a vector of time intervals. Every interval has a beginning and an end, represented as hours. Your task is to return the non-intersecting intervals that can be obtained from the given ones. Assume that the intervals will be sorted according to their beginning.
+
+Example
+
+```text
+Input:  {1, 5}, {2, 3}, {4, 6}, {7, 8}, {8, 10}, {12, 15}
+Output: {1, 6}, {7, 10}, {12, 15}
+```
