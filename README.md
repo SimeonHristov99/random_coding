@@ -520,3 +520,7 @@ Example
 Input:  {1, 5}, {2, 3}, {4, 6}, {7, 8}, {8, 10}, {12, 15}
 Output: {1, 6}, {7, 10}, {12, 15}
 ```
+
+## Task 27
+
+Create a convolutional neural network for the [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/overview) Kaggle challenge.
