@@ -538,20 +538,19 @@ Input
 The input of your function consists of two strings - the symbols that George showed in the order he showed them and a second string with the set of symbols that John showed in the order he showed them.
 Output
 
-Your function should return a single string in the format “George <GEORGE_POINTS> John <JOHN_POINTS> <MOST_POPULAR_GAME> <NUMBER_TIMES_PLAYED>“. Where <GEORGE_POINTS> is a single integer representing the number of points George won in total, <JOHN_POINTS> is the number of points John won in total <MOST_POPULAR_GAME> is the combination of symbols that George and John respectively played the most times(the two symbols joined without any space between them) and <NUMBER_TIMES_PLAYED> is the number of times this particular combination appeared. If multiple combinations appear the maximum number of times you may print any of them. For more details see example
-Example
-Input
+Your function should return a single string in the format “George <GEORGE_POINTS> John <JOHN_POINTS> <MOST_POPULAR_GAME> <NUMBER_TIMES_PLAYED>“. Where <GEORGE_POINTS> is a single integer representing the number of points George won in total, <JOHN_POINTS> is the number of points John won in total <MOST_POPULAR_GAME> is the combination of symbols that George and John respectively played the most times(the two symbols joined without any space between them) and <NUMBER_TIMES_PLAYED> is the number of times this particular combination appeared. If multiple combinations appear the maximum number of times you may print any of them.
 
+Example
+
+```text
+Input
 OOOOOO[][]8<
 [][]8<8<8<O[]O[]
+```
 
+```text
 Output
-
 George 12 John 6 O8< 3
+```
 
-Evaluation
-
-Criteria taken into account in the evaluation are code correctness obviously (tests should pass), but also code quality to some extent.
-Notes
-
-It is guaranteed that the two input strings will contain only the valid symbols “8<”, “[]” and “O”. It is guranteed that the two strings will represent the same number of symbols. It is also guaranteed that John and George played no more than 100 games.
+> **Notes**: It is guaranteed that the two input strings will contain only the valid symbols “8<”, “[]” and “O”. It is guranteed that the two strings will represent the same number of symbols. It is also guaranteed that John and George played no more than 100 games.

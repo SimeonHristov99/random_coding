@@ -22,9 +22,9 @@ def solution(george, john):
     points_j = 0
 
     for move in zip(george, john):
-        if move in { '21', '32', '13' }:
+        if move in {'21', '32', '13'}:
             points_g += 2
-        elif move in { '22', '33', '11' }:
+        elif move in {'22', '33', '11'}:
             points_g += 1
             points_j += 1
         else:
@@ -34,7 +34,7 @@ def solution(george, john):
 
     print(list(zip(george, john)))
 
-    n = [ int(''.join(pair)) for pair in zip(george, john) ]
+    n = [int(''.join(pair)) for pair in zip(george, john)]
 
     moves, freq = np.unique(n, return_counts=True)
     most_popular_george = encoding.get(moves[np.argmax(freq)] // 10, None)
