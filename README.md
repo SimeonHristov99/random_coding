@@ -524,3 +524,34 @@ Output: {1, 6}, {7, 10}, {12, 15}
 ## Task 27
 
 Create a convolutional neural network for the [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/overview) Kaggle challenge.
+
+
+## Task 28
+
+George and John just discovered a new game called Rock, Paper, Scissors and want to give it a try. They will play a set of games where in each game both of them will show one of the three signs Rock (depicted by the string “O” - capital oh, not zero), Paper (depicted by the string “[]” -opening square bracket followed by a closing square bracket) or Scissors (depicted by the string “8<” - an eight and a less than sign). According to the rules of Rock, Paper, Scissors rock beats scissors, scissors beats paper and paper beats rock. If both players show the same symbol the game is tied.
+
+The winner of a game scores 2 points, the loser scores 0, if the game is tied both players score 1 point.
+
+Your task is: given the log of the games being played, report how many points each of George and John scored and also tell us which combination of symbols was most popular among all games played.
+Input
+
+The input of your function consists of two strings - the symbols that George showed in the order he showed them and a second string with the set of symbols that John showed in the order he showed them.
+Output
+
+Your function should return a single string in the format “George <GEORGE_POINTS> John <JOHN_POINTS> <MOST_POPULAR_GAME> <NUMBER_TIMES_PLAYED>“. Where <GEORGE_POINTS> is a single integer representing the number of points George won in total, <JOHN_POINTS> is the number of points John won in total <MOST_POPULAR_GAME> is the combination of symbols that George and John respectively played the most times(the two symbols joined without any space between them) and <NUMBER_TIMES_PLAYED> is the number of times this particular combination appeared. If multiple combinations appear the maximum number of times you may print any of them. For more details see example
+Example
+Input
+
+OOOOOO[][]8<
+[][]8<8<8<O[]O[]
+
+Output
+
+George 12 John 6 O8< 3
+
+Evaluation
+
+Criteria taken into account in the evaluation are code correctness obviously (tests should pass), but also code quality to some extent.
+Notes
+
+It is guaranteed that the two input strings will contain only the valid symbols “8<”, “[]” and “O”. It is guranteed that the two strings will represent the same number of symbols. It is also guaranteed that John and George played no more than 100 games.
