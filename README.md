@@ -185,16 +185,16 @@ RomanNumerals.fromRoman('M'); // should return 1000
 
 Help
 
-| Symbol         | Value     |
-|--------------|-----------|
-| I | 1 |
-| IV | 4 |
-| V | 5 |
-| X | 10 |
-| L | 50 |
-| C | 100 |
-| D | 500 |
-| M | 1000 |
+| Symbol | Value |
+| ------ | ----- |
+| I      | 1     |
+| IV     | 4     |
+| V      | 5     |
+| X      | 10    |
+| L      | 50    |
+| C      | 100   |
+| D      | 500   |
+| M      | 1000  |
 
 ## Task 11
 
@@ -668,3 +668,16 @@ and you must return the greatest: `68957`.
 
 Write function which given a positive integer `n` returns the maximum number you got doing rotations similar to the above example.
 
+## Task 34
+
+Create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+## Task 35
+
+Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+
+Example
+
+```c++
+createPhoneNumber(int[10]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns "(123) 456-7890"
+```
