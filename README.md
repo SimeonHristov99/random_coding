@@ -183,7 +183,7 @@ RomanNumerals.toRoman(1000); // should return 'M'
 RomanNumerals.fromRoman('M'); // should return 1000
 ```
 
-Help
+You may find these helpful:
 
 | Symbol | Value |
 | ------ | ----- |
@@ -680,4 +680,16 @@ Example
 
 ```c++
 createPhoneNumber(int[10]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns "(123) 456-7890"
+```
+
+## Task 36
+
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+```text
+"Dermatoglyphics" --> true
+"aba" --> false
+"moOse" --> false (ignore letter case)
 ```
