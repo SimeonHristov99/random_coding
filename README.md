@@ -693,3 +693,19 @@ Example: (Input --> Output)
 "aba" --> false
 "moOse" --> false (ignore letter case)
 ```
+
+## Task 37
+
+Given two binary strings (strings containing only 1s and 0s) return their sum (also as a binary string).
+Note: neither binary string will contain leading 0s unless the string itself is 0
+
+Ex: Given the following binary strings...
+
+```text
+add_bin("100", "1")      =>  "101"
+add_bin("11", "1")       =>  "100"
+add_bin("1", "0")        =>  "1"
+add_bin("111", "10")     =>  "1001"
+add_bin("1101", "101")   =>  "10010"
+add_bin("1101", "10111") =>  "100100"
+```
