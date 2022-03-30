@@ -803,3 +803,15 @@ Input: words = ["a","b","c"], pattern = "a"
 Output: ["a","b","c"]
 ```
 
+## Task 41
+
+Find the intersection between two arrays.
+
+Example:
+
+```text
+l1 = ["green", "orange", "blue", "red"]
+l2 = ["black", "green", "red", "purple"]
+intersect(l1, l2) => "green", "red"};
+```
+
