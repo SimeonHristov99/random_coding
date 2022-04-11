@@ -1,9 +1,9 @@
 import unittest
 
 
-class TestStringMethods(unittest.TestCase):
+class TestMethods(unittest.TestCase):
 
-    def test_upper(self):
+    def test(self):
         self.assertEqual('foo'.upper(), 'FOO')
 
 
