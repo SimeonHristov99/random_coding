@@ -831,3 +831,57 @@ Examples
 "1plus2plus3plus4"  --> "10"
 "1plus2plus3minus4" -->  "2"
 ```
+
+## Task 44
+
+The pair sum of a pair (a,b) is equal to a + b. The maximum pair sum is the largest pair sum in a list of pairs.
+
+```text
+For example, if we have pairs (1,5), (2,3), and (4,4), the maximum pair sum would be max(1+5, 2+3, 4+4) = max(6, 5, 8) = 8.
+```
+
+Given an array nums of even length n, pair up the elements of nums into n / 2 pairs such that:
+
+```text
+Each element of nums is in exactly one pair, and
+The maximum pair sum is minimized.
+```
+
+Return the minimized maximum pair sum after optimally pairing up the elements.
+
+Example 1:
+
+```text
+Input: nums = [3,5,2,3]
+Output: 7
+```
+
+Example 2:
+
+```text
+Input: nums = [3,5,4,2,4,6]
+Output: 8
+```
+
+## Task 45
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+Example 1:
+
+```text
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+```
+
+Example 2:
+
+```text
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+```
+
