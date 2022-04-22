@@ -926,3 +926,15 @@ Output: true
 Input: root = [5,3,6,2,4,null,7], k = 28
 Output: false
 
+## Task 48
+
+Given an array of integers nums, sort the array in increasing order based on the frequency of the values. If multiple values have the same frequency, sort them in decreasing order.
+
+Return the sorted array.
+
+Example 1:
+
+```text
+Input: nums = [1,1,2,2,2,3]
+Output: [3,1,1,2,2,2]
+```
