@@ -1016,3 +1016,14 @@ Input: matrix = [[3,7,8],[9,11,13],[15,16,17]]
 Output: [15]
 ```
 
+## Task 52
+
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Example:
+
+```text
+Input: nums = [1,2,3,1]
+Output: true
+```
+
