@@ -1038,3 +1038,14 @@ Input: nums = [1,2,3,1], k = 3
 Output: true
 ```
 
+## Task 54
+
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+Example:
+
+```text
+Input: nums = [3,0,1]
+Output: 2
+```
+
