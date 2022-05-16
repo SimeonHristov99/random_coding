@@ -1067,3 +1067,30 @@ Input: nums = [1,1]
 Output: [2]
 ```
 
+## Task 56
+
+You are given a string dictionary, representing a partial lexicographic ordering of ancient astronauts' dictionary. Given a string s, return whether it's a lexicographically sorted string according to this ancient astronaut dictionary.
+
+Example 1
+
+```text
+Input
+dictionary = "acb"
+s = "aaaa h ccc i bbb"
+Output
+True
+Explanation
+The only constraint is that a comes before c which comes before b .
+```
+
+Example 2
+
+```text
+Input
+dictionary = "acb"
+s = "aaaacccbc"
+Output
+False
+Explanation
+This is false because of the last c, which comes after b.
+```
