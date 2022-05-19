@@ -1094,3 +1094,18 @@ False
 Explanation
 This is false because of the last c, which comes after b.
 ```
+
+## Task 57
+
+Given a list of integers `nums` and an integer `k`, choose elements from `nums` to create a list of length `k` such that the difference between the largest integer in the list and the smallest integer is minimized. Return this difference.
+
+Example 1
+
+```text
+nums = [2, 10, 5, 1, 8]
+k = 3
+Output
+4
+Explanation
+The best list we can make is [1, 2, 5].
+```
