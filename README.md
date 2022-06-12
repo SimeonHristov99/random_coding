@@ -1155,3 +1155,40 @@ root1 = [1, [3, null, null], [4, [0, null, [2, null, null]], null]]
 Output
 true
 ```
+
+## Task 60
+
+Implement a rate limiter that limits users’ requests with the following methods:
+
+- `RateLimiter(int expire)` constructs a new rate limiter with the given `expire` time.
+
+- `limit(int uid, int timestamp)` represents a request from user `uid` at time `timestamp` and should return whether the given user’s request fails. It should fail if the user had a successful request less than `expire` time ago.
+
+You can assume that timestamp is monotonically increasing between requests.
+
+```text
+Example 1
+Input
+methods = ["constructor", "limit", "limit", "limit", "limit"]
+arguments = [[5], [0, 10], [0, 15], [0, 16], [1, 17]]`
+Output
+[null, false, false, true, false]
+```
+
+```text
+Example 2
+Input
+methods = ["constructor", "limit", "limit", "limit", "limit"]
+arguments = [[0], [0, 1], [0, 1], [0, 2], [0, 3]]`
+Output
+[null, false, false, false, false]
+```
+
+```text
+Example 3
+Input
+methods = ["constructor", "limit", "limit", "limit"]
+arguments = [[5], [0, 10], [0, 13], [0, 16]]`
+Output
+[null, false, true, false]
+```
