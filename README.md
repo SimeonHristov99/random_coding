@@ -1196,3 +1196,8 @@ Output
 ## Task 61
 
 Practice the `R` programming language.
+
+## Task 62
+
+Given an integer `n`, return the sum of the first `n` positive odd integers.
+
