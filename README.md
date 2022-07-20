@@ -1201,3 +1201,7 @@ Practice the `R` programming language.
 
 Given an integer `n`, return the sum of the first `n` positive odd integers.
 
+## Task 63
+
+You are given a list of integers `rooms` and an integer `target`. Return the first integer in `rooms` that's `target` or larger. If there is no solution, return `-1`.
+
