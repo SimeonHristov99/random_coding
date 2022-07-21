@@ -1205,3 +1205,7 @@ Given an integer `n`, return the sum of the first `n` positive odd integers.
 
 You are given a list of integers `rooms` and an integer `target`. Return the first integer in `rooms` that's `target` or larger. If there is no solution, return `-1`.
 
+## Task 64
+
+Given a binary tree `root`, return the sum of all values in the tree.
+
