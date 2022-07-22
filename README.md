@@ -1209,3 +1209,7 @@ You are given a list of integers `rooms` and an integer `target`. Return the fir
 
 Given a binary tree `root`, return the sum of all values in the tree.
 
+## Task 65
+
+Given a binary tree `root`, invert it so that its left subtree and right subtree are swapped and the children are recursively inverted.
+
