@@ -1213,3 +1213,7 @@ Given a binary tree `root`, return the sum of all values in the tree.
 
 Given a binary tree `root`, invert it so that its left subtree and right subtree are swapped and the children are recursively inverted.
 
+## Task 66
+
+Write a function, that takes in a positive parameter and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+
