@@ -1217,3 +1217,12 @@ Given a binary tree `root`, invert it so that its left subtree and right subtree
 
 Write a function, that takes in a positive parameter and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
+## Task 67
+
+A spider web is defined by
+
+- "rings" numbered out from the centre as 0, 1, 2, 3, 4
+- "radials" labelled clock-wise from the top as A, B, C, D, E, F, G, H
+
+Each point where the rings and the radials intersect can be described by a "web coordinate". Our friendly jumping spider is resting and minding his own spidery business at web-coordinate spider. An inattentive fly bumbles into the web at web-coordinate fly and gets itself stuck. Your task is to calculate and return the distance the spider must jump to get to the fly.
+
