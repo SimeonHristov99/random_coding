@@ -1226,3 +1226,6 @@ A spider web is defined by
 
 Each point where the rings and the radials intersect can be described by a "web coordinate". Our friendly jumping spider is resting and minding his own spidery business at web-coordinate spider. An inattentive fly bumbles into the web at web-coordinate fly and gets itself stuck. Your task is to calculate and return the distance the spider must jump to get to the fly.
 
+## Task 68
+
+Implement the mod operator without using the mod operator.
