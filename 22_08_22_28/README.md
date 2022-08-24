@@ -31,3 +31,16 @@ Implement Count() to count the occurrences of an integer in a linked list.
 
 The `push()/Push()` and `buildOneTwoThree()/BuildOneTwoThree()` functions do not need to be redefined.
 
+## Wednesday
+
+You will have a list of rationals in the form
+
+    lst = [ [numer_1, denom_1] , ... , [numer_n, denom_n] ]
+
+where all numbers are positive integers. You have to produce their sum N / D in an irreducible form: this means that N and D have only 1 as a common divisor.
+
+Example:
+
+    [ [1, 2], [1, 3], [1, 4] ]  -->  [13, 12]
+    1/2  +  1/3  +  1/4     =      13/12
+
