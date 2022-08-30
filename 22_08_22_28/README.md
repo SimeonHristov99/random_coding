@@ -18,18 +18,15 @@ Calculate the sum of the numbers in the `n`th row of this triangle (starting at 
 
 ## Tuesday
 
-Implement Length() to count the number of nodes in a linked list.
+Find the length of the longest substring in the given string s that is the same in reverse. As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7. If the length of the input string is 0, the return value must be 0.
 
-    Length(null) => 0
-    Length(1 -> 2 -> 3 -> null) => 3
+Example:
 
-Implement Count() to count the occurrences of an integer in a linked list.
-
-    Count(null, 1) => 0
-    Count(1 -> 2 -> 3 -> nullptr, 1) => 1
-    Count(1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> nullptr, 2) => 4
-
-The `push()/Push()` and `buildOneTwoThree()/BuildOneTwoThree()` functions do not need to be redefined.
+    "a" -> 1 
+    "aab" -> 2  
+    "abcde" -> 1
+    "zzbaabcd" -> 4
+    "" -> 0
 
 ## Wednesday
 
