@@ -15,3 +15,18 @@ The push function accepts head and data parameters, where head is either a node 
 
 The buildOneTwoThree function should create and return a linked list with three nodes: `1 -> 2 -> 3 -> null`.
 
+## Tuesday
+
+Implement Length() to count the number of nodes in a linked list.
+
+    Length(null) => 0
+    Length(1 -> 2 -> 3 -> null) => 3
+
+Implement Count() to count the occurrences of an integer in a linked list.
+
+    Count(null, 1) => 0
+    Count(1 -> 2 -> 3 -> nullptr, 1) => 1
+    Count(1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 2 -> 3 -> 3 -> nullptr, 2) => 4
+
+The `push()/Push()` and `buildOneTwoThree()/BuildOneTwoThree()` functions do not need to be redefined.
+
