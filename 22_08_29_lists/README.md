@@ -70,3 +70,12 @@ Write an `InsertSort()` function which rearranges nodes in a linked list so they
 
 If the passed in head node is null or a single node, return null or the single node, respectively. You can assume that the head node will always be either `null`, a single node, or a linked list consisting of multiple nodes.
 
+## Sunday
+
+Write an `Append()` function which appends one linked list to another. The head of the resulting list should be returned.
+
+    var listA = 1 -> 2 -> 3 -> null
+    var listB = 4 -> 5 -> 6 -> null
+    append(listA, listB) === 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null
+
+If both `listA` and `listB` are `None`, return `None`. If one list is `None` and the other is not, simply return the `None` list.
