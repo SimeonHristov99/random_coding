@@ -53,3 +53,12 @@ back === 11 -> 12 -> 14 -> null
 
 Throw an error if any of the arguments to `FrontBackSplit` are `null` or if the source list has `< 2` nodes.
 
+## Friday
+
+Write a `ShuffleMerge()` function that takes two lists and merges their nodes together to make one list, taking nodes alternately between the two lists. So `ShuffleMerge()` with `1 -> 2 -> 3 -> null` and `7 -> 13 -> 1 -> null` should yield `1 -> 7 -> 2 -> 13 -> 3 -> 1 -> null`. If either list runs out, all the nodes should be taken from the other list. `ShuffleMerge()` should return the new list. The solution depends on being able to move nodes to the end of a list.
+
+```js
+var first = 3 -> 2 -> 8 -> null
+var second = 5 -> 6 -> 1 -> 9 -> 11 -> null
+shuffleMerge(first, second) === 3 -> 5 -> 2 -> 6 -> 8 -> 1 -> 9 -> 11 -> null
+```
