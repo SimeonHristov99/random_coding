@@ -73,3 +73,11 @@ var second = 1 -> 3 -> 5 -> 6 -> 8 -> null
 sortedMerge(first, second) === 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 6 -> 7 -> 8 -> null
 ```
 
+## Sunday
+
+Write a `MergeSort()` function which recursively sorts a list in ascending order. Note that this problem requires recursion. Given `FrontBackSplit()` and `SortedMerge()`, you can write a classic recursive merge sort.
+
+```js
+var list = 4 -> 2 -> 1 -> 3 -> 8 -> 9 -> null
+mergeSort(list) === 1 -> 2 -> 3 -> 4 -> 8 -> 9 -> null
+```
