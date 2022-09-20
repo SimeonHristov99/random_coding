@@ -56,3 +56,32 @@ Swap two neighboring matrix columns, that is, columns with indexes j and jâ€‰+â€
 
 You think that a matrix looks beautiful, if the single number one of the matrix is located in its middle (in the cell that is on the intersection of the third row and the third column). Count the minimum number of moves needed to make the matrix beautiful.
 
+## Task 5
+
+Little Petya loves presents. His mum bought him two strings of the same size for his birthday. The strings consist of uppercase and lowercase Latin letters. Now Petya wants to compare those two strings lexicographically. The letters' case does not matter, that is an uppercase letter is considered equivalent to the corresponding lowercase letter. Help Petya perform the comparison.
+
+Examples
+
+```text
+Input
+aaaa
+aaaA
+Output
+0
+```
+
+```text
+Input
+abs
+Abz
+Output
+-1
+```
+
+```text
+Input
+abcdefg
+AbCdEfF
+Output
+1
+```
