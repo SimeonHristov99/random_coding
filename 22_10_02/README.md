@@ -25,3 +25,9 @@ times: set al=al+1,al+1=al+2,…,ar−1=ar,ar=al
 
 Mainak wants to maximize the value of (an−a1) after exactly one such operation. Determine the maximum value of (an−a1) that he can obtain.
 
+## Task 2
+
+You are given a positive integer x. Find any such 2 positive integers a and b such that GCD(a,b)+LCM(a,b)=x.
+
+It's guaranteed that the solution always exists. If there are several such pairs (a,b), you can output any of them.
+
