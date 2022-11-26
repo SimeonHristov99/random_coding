@@ -37,3 +37,23 @@ Little Susie listens to fairy tales before bed every day. Today's fairy tale was
 
 There are n trees located along the road at points with coordinates x1, x2, ..., xn. Each tree has its height hi. Woodcutters can cut down a tree and fell it to the left or to the right. After that it occupies one of the segments [xi - hi, xi] or [xi;xi + hi]. The tree that is not cut down occupies a single point with coordinate xi. Woodcutters can fell a tree if the segment to be occupied by the fallen tree doesn't contain any occupied point. The woodcutters want to process as many trees as possible, so Susie wonders, what is the maximum number of trees to fell. 
 
+## Task 4
+
+Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+
+Your task is to write a function *maskify*, which changes all but the last four characters into '#'.
+Examples
+
+"4556364607935616" --> "############5616"
+     "64607935616" -->      "#######5616"
+               "1" -->                "1"
+                "" -->                 ""
+
+// "What was the name of your first pet?"
+
+"Skippy" --> "##ippy"
+
+"Nananananananananananananananana Batman!"
+-->
+"####################################man!"
+
