@@ -85,3 +85,17 @@ The second line contains n space-separated integers a1, a2, ..., an (0 �
 Output
 
 Output the number of participants who advance to the next round.
+
+## Task 7
+
+ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+If the function is passed a valid PIN string, return True, else return False.
+
+Examples (Input --> Output)
+
+```text
+"1234"   -->  true
+"12345"  -->  false
+"a234"   -->  false
+```
