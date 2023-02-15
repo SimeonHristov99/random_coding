@@ -60,3 +60,20 @@ V V V V V V V V V V V V
 Now simply drop the last three zeros and the last 1. The number becomes 10111001 which is 185 in decimal. That is the expected output. Notice that in array to binary conversion brackets of the main array are not included.
 
 Your task is to write a pair of functions, encode and decode. encode should encode a number according the above procedure, and decode will return the original number given an encoded number.
+
+# Task 4
+
+Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+    "I love you"
+    "a little"
+    "a lot"
+    "passionately"
+    "madly"
+    "not at all"
+
+If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on.
+
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+Your goal is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
